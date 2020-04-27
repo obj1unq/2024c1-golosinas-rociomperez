@@ -1,7 +1,4 @@
 # Golosinas
- 
-[![Build Status](https://travis-ci.org/wollok/golosinas.svg?branch=master)](https://travis-ci.org/wollok/golosinas)
-
 
 A Mariano le gustan mucho las golosinas. Juliana opina que exagera en el consumo de
 las mismas. Por eso Mariano decidió programar un modelo en objetos que le permitiera
