@@ -3,7 +3,6 @@ De cada **golosina** interesan: el _precio_, el _sabor_, su _peso_ en gramos y s
 Además, cada vez que una golosina _recibe un mordisco_ se reduce la cantidad de gramos
 que posee.
 
-
 #### Bombón
 Vale 5 pesos y pesa inicialmente 15 gramos. Su gusto es frutilla. Es libre
 de gluten. <br> 
@@ -26,6 +25,11 @@ Cuando recibe un mordisco, pierde el 10 % de su peso, a excepción de que su pes
 #### Oblea 
 Vale 5 pesos y pesa inicialmente 250 gramos. Su gusto es vainilla. No es libre de gluten.  
 Al recibir un mordisco pierde peso, en una cantidad que depende del peso actual: si es mayor a 70 gramos pierde el 50 % de su peso, en caso contrario, el 25 %.
+
+
+## Golosinas Extras
+
+Con las que golosinas que ya desarrollaste podés avanzar a la parte 2, pero acá hay algunas otras para trabajar cosas interesantes:
 
 #### Chocolatín
 El peso inicial es desconocido, lo asigna el usuario. El precio es de $0,50 por cada gramo de peso inicial. No es libre de gluten. Obviamente, su gusto es chocolate.   
