@@ -1,0 +1,79 @@
+import golosinas.*
+import mariano.*
+
+describe "mariano compre el chocolatin, el caramelo y el bombón" {
+
+	method initialize() {
+		chocolatin.pesoInicial(50)
+		mariano.comprar(chocolatin)
+		mariano.comprar(caramelo)
+		mariano.comprar(bombon)
+	}
+
+	test "cantidad de golosinas" {
+		assert.equals(3, mariano.cantidadDeGolosinas())
+	}
+
+	test "tiene un chupetin" {
+		assert.notThat(mariano.tieneLaGolosina(chupetin))
+	}
+
+	test "mariano prueba las golosinas" {
+		mariano.probarGolosinas()
+		assert.equals(48, chocolatin.peso())
+		assert.equals(4, caramelo.peso())
+		assert.equals(11, bombon.peso())
+	}
+
+	test "hay golosinas sin TACC" {
+		assert.that(mariano.hayGolosinaSinTACC())
+	}
+
+	test "preciosCuidados" {
+		assert.notThat(mariano.preciosCuidados())
+	}
+
+	test "golosina de sabor frutilla" {
+		assert.equals(bombon, mariano.golosinaDeSabor("frutilla"))
+	}
+
+	test "golosinas de sabor frutilla" {
+		assert.equals(#{ caramelo, bombon }, mariano.golosinasDeSabor("frutilla"))
+	}
+
+	test "sabores" {
+		assert.equals(#{ "chocolate", "frutilla" }, mariano.sabores())
+	}
+
+	test "golosina mas cara" {
+		assert.equals(chocolatin, mariano.golosinaMasCara())
+	}
+
+	test "peso de las golosinas" {
+		assert.equals(70, mariano.pesoGolosinas())
+	}
+
+	test "golosinas deseadas: alfajor, bombon, chocolatin, chupetin" {
+		const property golosinasDeseadas = #{ alfajor, bombon, chocolatin, chupetin }
+		assert.equals(#{ alfajor, chupetin }, mariano.golosinasFaltantes(golosinasDeseadas))
+	}
+
+	test "gustos deseados: melón, chocolate, frutilla, vainilla " {
+		const property gustosDeseados = #{ "melon", "chocolate", "frutilla", "vainilla" }
+		assert.equals(#{ "melon", "vainilla" }, mariano.gustosFaltantes(gustosDeseados))
+	}
+
+	test "gasto en sabor frutilla" {
+		assert.equals(6, mariano.gastoEn("frutilla"))
+	}
+
+	test "sabor mas popular" {
+		assert.equals("frutilla", mariano.saborMasPopular())
+	}
+
+	test "sabor mas pesado" {
+		assert.equals("chocolate", mariano.saborMasPesado())
+	}
+
+}
+
