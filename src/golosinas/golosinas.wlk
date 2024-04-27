@@ -94,17 +94,22 @@ object oblea {
 // GOLOSINAS EXTRAS
 object chocolatin {
 
-	var property pesoInicial
-	var property peso = pesoInicial
+	var pesoInicial
+	var peso
 	const property gusto = "chocolate"
 	const property libreDeGluten = false
 
-	method precio() {
-		return self.pesoInicial() * 0.5
+	method pesoInicial(_pesoInicial) {
+		pesoInicial = _pesoInicial
+		peso = _pesoInicial
 	}
 
 	method peso() {
 		return peso
+	}
+	
+	method precio() {
+		return pesoInicial * 0.5
 	}
 
 	method mordisco() {
@@ -155,11 +160,11 @@ object golosinaBaniada {
 
 object pastillaTuttiFrutti {
 
-	var peso = 5
+	var property peso = 5
 	var property libreDeGluten
 	var cantidadDeMordisco = 0
 	const property sabores = [ "frutilla", "chocolate", "naranja" ]
-	var property sabor
+	var property gusto = "frutilla"
 
 	method precio() {
 		return if (self.libreDeGluten()) {
@@ -171,13 +176,16 @@ object pastillaTuttiFrutti {
 
 	method mordisco() {
 		if (cantidadDeMordisco < sabores.size()) {
-			sabor = sabores.get(cantidadDeMordisco)
+			cantidadDeMordisco += 1
+			gusto = sabores.get(cantidadDeMordisco)
 		} else {
-			cantidadDeMordisco = 0
-			sabor = sabores.get(cantidadDeMordisco)
+			gusto = sabores.get(0)
 		}
-		cantidadDeMordisco += 1
 	}
-
 }
+
+
+
+
+
 
